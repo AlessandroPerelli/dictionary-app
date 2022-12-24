@@ -1,19 +1,16 @@
 import { useEffect, useState } from 'react'
+import Axios from 'axios'
 
 function App() {
   const [data, setData] = useState(null)
 
-  useEffect(() => {
-    const fetchData = async () => {
-      const result = (await fetch("https://api.dictionaryapi.dev/api/v2/entries/en/beach")).json()
-      setData(result)
-      console.log(result[2])
-    }
-    fetchData()
-  }, [])
+  Axios.get("https://api.dictionaryapi.dev/api/v2/entries/en/water").then((res) => {
+    setData(res.data[0].meanings[0].definitions[0].definition)
+  })
 
   return (
     <div>
+      <p>{data}</p>
     </div>
   );
 }
