@@ -1,5 +1,7 @@
 import { useEffect, useState } from 'react'
 import Axios from 'axios'
+import { NextUIProvider } from '@nextui-org/react';
+import Search from './components/Search';
 
 function App() {
   const [data, setData] = useState(null)
@@ -9,9 +11,9 @@ function App() {
   })
 
   return (
-    <div>
-      <p>{data}</p>
-    </div>
+    <NextUIProvider>
+      <Search />
+    </NextUIProvider>
   );
 }
 
