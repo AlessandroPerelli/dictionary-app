@@ -7,7 +7,7 @@ export default function Search() {
     <div className='search'>
         <Text>Search for a word</Text>
         <Text>Enter the word you would like to discover the defnition of</Text>
-        <Input placeholder='Find interesting words...' clearable='true' />
+        <Input placeholder='Find interesting words...' clearable='true' fullWidth='true' />
     </div>
   )
 }

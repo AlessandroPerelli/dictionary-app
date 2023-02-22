@@ -1,7 +1,9 @@
 import { useEffect, useState } from 'react'
+import { Routes, Route } from "react-router-dom"
 import Axios from 'axios'
 import { NextUIProvider } from '@nextui-org/react';
 import Search from './components/Search';
+import Result from './components/Result';
 
 function App() {
   const [data, setData] = useState(null)
@@ -12,7 +14,10 @@ function App() {
 
   return (
     <NextUIProvider>
-      <Search />
+      <Routes>
+        <Route path='/' element={<Search/>} />
+        <Route path='/result' element={<Result/>} />
+      </Routes>
     </NextUIProvider>
   );
 }
